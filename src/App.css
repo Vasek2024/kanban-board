@@ -1,10 +1,12 @@
-#root {
-  max-width: 1280px;
+.wrapper {
+  box-sizing: border-box;
+  padding: 0;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  max-width: 1225px;
+  background: #3299d5;
+  border: 1px solid red;
 }
-
+/* 
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -39,4 +41,4 @@
 
 .read-the-docs {
   color: #888;
-}
+} */
