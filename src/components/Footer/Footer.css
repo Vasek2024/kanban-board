@@ -1,0 +1,15 @@
+.footer{
+    background: #0067a3;
+    height: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer__finished{
+    display: flex;
+    column-gap: 32px;
+}
+.footer__kanban{
+    margin-right: 20px;
+
+}
