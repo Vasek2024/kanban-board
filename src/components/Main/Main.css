@@ -6,43 +6,6 @@
     justify-content: space-between;
     column-gap: 2%;
 }
-
-
-
-.main__backlog{
-    padding: 10px;
-    border-radius: 10px;
-    width: 24%;
-    background: #ebecf0;
-}
-.main__backlog-h2{
-    margin-bottom: 16px;
-    font-weight: 400;
-    font-size: 18px;
-    color: #000;
-}
-.main__backlog-h3{
-    padding: 6px;
-    margin-bottom: 16px;
-    font-weight: 400;
-    font-size: 16px;
-    color: #000;
-    background: #fff;
-    border-radius: 6px;
-}
-.main__backlog-list{
-    padding: 6px;
-    margin-bottom: 16px;
-    font-weight: 400;
-    font-size: 16px;
-    color: #000;
-    background: #fff;
-    border-radius: 6px;
-}
-
-
-
-
 .main__ready{
     padding: 10px;
     border-radius: 10px;
@@ -55,7 +18,7 @@
     font-size: 18px;
     color: #000;
 }
-.main__ready-h3{
+.main__ready-good{
     padding: 6px;
     margin-bottom: 16px;
     font-weight: 400;
@@ -64,6 +27,54 @@
     background: #fff;
     border-radius: 6px;
 }
+
+
+
+.main__ready-task{
+    padding: 6px;
+    margin-bottom: 16px;
+    width: 100%;
+    color: #000;
+    border-radius: 4px;
+    border: none;
+    background: #fff;
+}
+
+
+
+
+.main__btn{
+    font-weight: 400;
+    font-size: 18px;
+    color: #5e6c84;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 102px;
+    height: 29px;
+    background: #ebecf0;
+}
+.main__btn:hover{
+    background: #fff;
+}
+.submit__btn{
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    width: 102px;
+    height: 29px;
+    background: #0079bf;
+    cursor: pointer;
+    border: none;
+}
+.submit__btn:hover{
+    color: #ebecf0;
+}
+
+
+
 .main__ready-list{
     padding: 6px;
     margin-bottom: 16px;
@@ -75,9 +86,31 @@
 }
 
 
+@media (max-width: 900px){
+.main{
+    flex-wrap: wrap;
+    row-gap: 20px;
+}
+.main__ready{
+    width: 49%;
+    
+}
+}
+
+@media (max-width: 670px){
+    .main{
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    .main__ready{
+        width: 100%;
+        
+    }
+    }
 
 
-.main__progress{
+
+/* .main__progress{
     padding: 10px;
     border-radius: 10px;
     width: 24%;
@@ -106,12 +139,12 @@
     color: #000;
     background: #fff;
     border-radius: 6px;
-}
+} */
 
 
 
 
-.main__finished{
+/* .main__finished{
     padding: 10px;
     border-radius: 10px;
     width: 24%;
@@ -140,4 +173,4 @@
     color: #000;
     background: #fff;
     border-radius: 6px;
-}
+} */

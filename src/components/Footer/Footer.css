@@ -1,6 +1,7 @@
 .footer{
+    padding: 16px 0;
     background: #0067a3;
-    height: 55px;
+    /* max-height: 55px; */
     display: flex;
     justify-content: space-between;
     align-items: center;

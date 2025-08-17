@@ -60,3 +60,14 @@
     font-size: 14px;
     color: #000;
 }
+
+@media (max-width: 370px){
+    .header__title{
+        display: none;
+    }
+
+
+
+    .header__burger{
+    }
+    }

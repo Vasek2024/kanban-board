@@ -1,11 +1,11 @@
 import './Footer.css'
 
-function Footer() {
-
+function Footer({cauntTask}) {
+console.log(cauntTask)
     return (
       <div className='footer'>
         <ul className='footer__finished'>
-            <li>Active tasks: &lt;N&gt;</li>
+            <li>Active tasks: &lt;N{cauntTask}&gt;</li>
             <li>Finished tasks: &lt;M&gt;</li>
         </ul>
         <ul className='footer__kanban'>
