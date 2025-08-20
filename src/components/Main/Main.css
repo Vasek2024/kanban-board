@@ -5,12 +5,17 @@
     display: flex;
     justify-content: space-between;
     column-gap: 2%;
+    /* max-height: 400px; */
 }
 .main__ready{
     padding: 10px;
     border-radius: 10px;
     width: 24%;
     background: #ebecf0;
+    max-height: 540px;
+    overflow-y: auto;
+    scrollbar-width: 12px;
+    scrollbar-color: #cbcbcb #fff;
 }
 .main__ready-h2{
     margin-bottom: 16px;
@@ -26,6 +31,14 @@
     color: #000;
     background: #fff;
     border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.main__ready-delite{
+    background: #fff;
+    border: none;
+    cursor: pointer;
 }
 
 

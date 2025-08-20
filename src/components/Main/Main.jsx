@@ -1,4 +1,5 @@
 import './Main.css'
+import ConbanProject from '../pages/ConbanProject'
 
 function Main(props) {
 
@@ -15,12 +16,6 @@ function Main(props) {
                 {/* заголовки */}
                 <div className='main__ready-h2'>
                     {props.columns[columnId].name}
-
-                    {/* НАДО ПЕРЕДАТЬ В ФУТЕР колличество задач*/}
-                    <span className='main__list-lists-span'>
-                        {/* {columns[columnId].items.length} */}
-                    </span>
-
                 </div>
                 <div>
                     {/* Если задач нету И если они есть */}
@@ -32,7 +27,7 @@ function Main(props) {
                                 draggable onDragStart={() => props.handleDragStart(columnId, items)}>
                                 <span>{items.content}</span>
                                 
-                                <button onClick={() => props.removeTask(columnId, items.id)}>
+                                <button className='main__ready-delite' onClick={() => props.removeTask(columnId, items.id)}>
                                     <span>x</span>
                                 </button>
                             </div>
@@ -41,7 +36,7 @@ function Main(props) {
                 </div>
 
                 {props.showInput && (
-                    <>
+                    <> {/* Фрагмент */}
                         <input className='main__ready-task'
                             type='text'
                             value = {props.newTask.value}

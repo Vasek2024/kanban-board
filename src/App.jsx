@@ -23,7 +23,7 @@ function App() {
         ]
     },
     inProgress:{
-        name: 'in Progress',
+        name: 'inProgress',
         items: [
             {id: '5', content:'Задача 5'},
             {id: '6', content:'Задача 6'},
@@ -40,20 +40,21 @@ function App() {
     }
 })
 
-    const [newTask, setNewTask] = useState('')
+    const [newTask, setNewTask] = useState('') // Новая задача
     
     const [draggedItem, setDraggedItem] = useState(null) // Какую задачу перетачкиваем
-// Состояние для управления видимостью div  
-    const [showInput, setShowInput] = useState(false);
+     
+    const [showInput, setShowInput] = useState(false);// Состояние для управления видимостью div 
+    
 
-// При клике на кнопку  
+    // При клике на кнопку  
     const handleButtonClick = () => {  
         setShowInput(!showInput); // Переключить состояние видимости  
         }
 
 
     // Создание новой задачи
-    const addTaskName = (titleTask) => {
+    const addTaskName = (titleTask, e) => {
         if(newTask.trim() === '') return alert ('Вы не ввели новую задачу!!!') // если строка пустая
         
         const updateColumns = {...columns}
@@ -67,6 +68,8 @@ function App() {
         setNewTask('')
     }
 
+
+    // onChange из value
     const handleValueChange = (event) => {
         event.preventDefault();
         setNewTask(event.target.value)
@@ -113,24 +116,32 @@ function App() {
         setDraggedItem(null)
     }
 
+    // Для footer
+    const backlogCount = columns.Backlog.items.length;
+    const inProgressCount = columns.inProgress.items.length;
+    const finishedCount = columns.Finished.items.length;
 
 
   return (
     <div className="wrapper">
-      <Header />
-      <Main columns = {columns}
-            newTask = {newTask}
-            draggedItem = {draggedItem}
-            showInput = {showInput}
-            handleButtonClick = {handleButtonClick}
-            addTaskName = {addTaskName}
-            removeTask = {removeTask}
-            handleDragStart = {handleDragStart}
-            handleDragOver = {handleDragOver}
-            handleDrop = {handleDrop}
-            handleValueChange = {handleValueChange}
-      />
-      <Footer />
+        <Header />
+        <Main columns = {columns}
+                newTask = {newTask}
+                draggedItem = {draggedItem}
+                showInput = {showInput}
+                handleButtonClick = {handleButtonClick}
+                addTaskName = {addTaskName}
+                removeTask = {removeTask}
+                handleDragStart = {handleDragStart}
+                handleDragOver = {handleDragOver}
+                handleDrop = {handleDrop}
+                handleValueChange = {handleValueChange}
+        />
+        <Footer 
+                backlogCount = {backlogCount}
+                inProgressCount = {inProgressCount}
+                finishedCount = {finishedCount}
+        />
     </div>
   )
 }
