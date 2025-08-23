@@ -1,5 +1,5 @@
 import './Main.css'
-import ConbanProject from '../pages/ConbanProject'
+import ConbanProjects from '../ConbanProjects/ConbanProjects'
 
 function Main(props) {
 
@@ -14,23 +14,26 @@ function Main(props) {
             onDrop={(e) => props.handleDrop(e, columnId)}
             >
                 {/* заголовки */}
-                <div className='main__ready-h2'>
+                <h1 className='main__ready-h1'>
                     {props.columns[columnId].name}
-                </div>
+                </h1>
+                <h3 className='main__ready-h3'>
+                    {props.columns[columnId].title}
+                </h3>
                 <div>
                     {/* Если задач нету И если они есть */}
                     {props.columns[columnId].items.length === 0 ? (
                         <div className='main__ready-good'>Поздравляю. Все задачи кончились!</div>
                     ) : (
                         props.columns[columnId].items.map((items) => (
-                            <div key={items.id} className='main__ready-good'
-                                draggable onDragStart={() => props.handleDragStart(columnId, items)}>
-                                <span>{items.content}</span>
+                            <ConbanProjects
+                                key = {items.id}
+                                items = {items}
+                                columnId = {columnId}
+                                removeTask = {props.removeTask}
+                                handleDragStart = {props.handleDragStart}
+                            />
                                 
-                                <button className='main__ready-delite' onClick={() => props.removeTask(columnId, items.id)}>
-                                    <span>x</span>
-                                </button>
-                            </div>
                         ))
                     )}
                 </div>

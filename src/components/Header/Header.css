@@ -6,10 +6,17 @@
     display: flex;
     justify-content: space-between;
 }
-.header__title{
+.header__title-hom{
+    text-decoration: none;
     font-weight: 400;
     font-size: 28px;
     color: #fff;
+}
+.header__title-hom:hover{
+    font-size: 30px;
+    color: #cfd3d6;
+    opacity: 0.8;
+    transition: 0.3s;
 }
 .header__burger{
     display: flex;
@@ -18,7 +25,6 @@
     justify-content:right;
 }
 .burger__icon{
-    /* width: 64px; */
     display: flex;
     align-items: center;
     gap: 10px;

@@ -1,15 +1,19 @@
 import { React, useState } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import Footer from './components/Footer/Footer';
+import ConbanProject from './components/pages/ConbanProject'
 import './components/reset.css'
 import './App.css'
+// import { columns } from './helpers/projectList'
 
 function App() {
 
   const [columns, setColumns] = useState({
     Backlog:{
         name: 'Backlog',
+        title: 'Login page – performance issues',
         items: [
             {id: '1', content:'Задача 1'},
             {id: '2', content:'Задача 2'}
@@ -17,6 +21,7 @@ function App() {
     },
     Ready:{
         name: 'Ready',
+        title: 'Shop page – performance issues',
         items: [
             {id: '3', content:'Задача 3'},
             {id: '4', content:'Задача 4'}
@@ -24,6 +29,7 @@ function App() {
     },
     inProgress:{
         name: 'inProgress',
+        title: 'User page – performance issues',
         items: [
             {id: '5', content:'Задача 5'},
             {id: '6', content:'Задача 6'},
@@ -33,9 +39,10 @@ function App() {
     },
     Finished:{
         name: 'Finished',
+        title: 'Main page – performance issues',
         items: [
-            {id: '3', content:'Задача 3'},
-            {id: '4', content:'Задача 4'}
+            {id: '9', content:'Задача 9'},
+            {id: '10', content:'Задача 10'}
         ]
     }
 })
@@ -124,24 +131,33 @@ function App() {
 
   return (
     <div className="wrapper">
-        <Header />
-        <Main columns = {columns}
-                newTask = {newTask}
-                draggedItem = {draggedItem}
-                showInput = {showInput}
-                handleButtonClick = {handleButtonClick}
-                addTaskName = {addTaskName}
-                removeTask = {removeTask}
-                handleDragStart = {handleDragStart}
-                handleDragOver = {handleDragOver}
-                handleDrop = {handleDrop}
-                handleValueChange = {handleValueChange}
-        />
-        <Footer 
-                backlogCount = {backlogCount}
-                inProgressCount = {inProgressCount}
-                finishedCount = {finishedCount}
-        />
+        <Router>
+            <Header />
+            <Routes>
+                <Route path='/' element = {
+                    <Main columns = {columns}
+                            newTask = {newTask}
+                            draggedItem = {draggedItem}
+                            showInput = {showInput}
+                            handleButtonClick = {handleButtonClick}
+                            addTaskName = {addTaskName}
+                            removeTask = {removeTask}
+                            handleDragStart = {handleDragStart}
+                            handleDragOver = {handleDragOver}
+                            handleDrop = {handleDrop}
+                            handleValueChange = {handleValueChange}
+                    />}>
+                </Route>
+                <Route path='/ConbanProject/:id' element = {
+                    <ConbanProject columns = {columns}/>}>
+                </Route>
+            </Routes>
+            <Footer 
+                    backlogCount = {backlogCount}
+                    inProgressCount = {inProgressCount}
+                    finishedCount = {finishedCount}
+            />
+        </Router>
     </div>
   )
 }

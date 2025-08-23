@@ -1,4 +1,5 @@
 import { React, useState } from 'react'
+import { NavLink } from "react-router-dom";
 // import logo from '../../components/Header/user-avatar.svg';
 // import './arrow-down.svg'
 // import './Vector.svg'
@@ -10,7 +11,11 @@ function Header() {
 
   return (
     <div className='header'>
-        <div className='header__title'>Awesome Kanban Board</div>
+        <div className='header__title'>
+            <NavLink to='/' className='header__title-hom'>
+                Awesome Kanban Board
+            </NavLink>
+        </div>
         <div className='header__burger'>
             <div className='burger__icon'>
                 <img className='burger__icon-avatar' onClick={() => setOpen(!isOpen)} src="/public/user-avatar.svg" alt="Логотип компании"></img>

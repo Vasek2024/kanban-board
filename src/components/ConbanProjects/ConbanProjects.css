@@ -1,0 +1,23 @@
+.main__ready-good{
+    padding: 6px;
+    margin-bottom: 16px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000;
+    background: #fff;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.main__ready-delite{
+    background: #fff;
+    border: none;
+    cursor: pointer;
+}
+.header__title-article{
+    font-weight: 400;
+    font-size: 16px;
+    color: #000;
+    text-decoration: none;
+}

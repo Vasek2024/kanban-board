@@ -17,13 +17,22 @@
     scrollbar-width: 12px;
     scrollbar-color: #cbcbcb #fff;
 }
-.main__ready-h2{
+.main__ready-h1{
     margin-bottom: 16px;
     font-weight: 400;
     font-size: 18px;
     color: #000;
 }
-.main__ready-good{
+.main__ready-h3{
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    font-weight: 400;
+    font-size: 16px;
+    color: #000;
+    background: #fff;
+}
+/* .main__ready-good{
     padding: 6px;
     margin-bottom: 16px;
     font-weight: 400;
@@ -39,7 +48,7 @@
     background: #fff;
     border: none;
     cursor: pointer;
-}
+} */
 
 
 
