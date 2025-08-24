@@ -1,4 +1,4 @@
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, useParams} from "react-router-dom";
 import { BsXLg } from "react-icons/bs";
 import './ConbanProject.css'
 
@@ -8,7 +8,8 @@ const ConbanProject = (props) => {
     const {id} = useParams()
     const project = props.columns[id]
 
-    console.log(props.columns[id]);
+    console.log(props.columns[id])
+    console.log(props.columns.Backlog.items[0].content);
 
 
     return (

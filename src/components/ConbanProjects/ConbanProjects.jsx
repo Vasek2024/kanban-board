@@ -6,7 +6,7 @@ const  ConbanProjects = (props) => {
     return ( 
         <div key={props.items.id} className='main__ready-good'
         draggable onDragStart={() => props.handleDragStart(props.columnId, props.items)}>
-            <NavLink to= 'ConbanProject' className='header__title-article' key = {props.items.id} >
+            <NavLink to= {`ConbanProject/${props.items.id}`} className='header__title-article' key = {props.items.id} >
                 <span>{props.items.content}</span>
             </NavLink>
                                 
