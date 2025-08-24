@@ -6,11 +6,11 @@ import Footer from './components/Footer/Footer';
 import ConbanProject from './components/pages/ConbanProject'
 import './components/reset.css'
 import './App.css'
-// import { columns } from './helpers/projectList'
 
 function App() {
 
   const [columns, setColumns] = useState({
+
     Backlog:{
         name: 'Backlog',
         title: 'Login page – performance issues',
